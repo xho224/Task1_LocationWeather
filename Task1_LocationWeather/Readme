@@ -22,3 +22,7 @@ Usage:
 2. Start the app, after the launchScreen, it will ask for authorization on accessing the GPS information. Just press Allow button to continue.
 3. User can either choose "current" button which stands for "using current location" or enter any valid US city name in the textField.
 4. Tap background will hide the keyboard.
+5. Click Enter or Current button again will zoom in/out the map.
+
+Bugs and Fix:
+The input will not allow "" but did not check for other invalid input. However, the API smart used in this project is very smart, it can handle most invalid input.
