@@ -1,0 +1,24 @@
+FIO Task:
+
+Build an iOS application with Objective C or Swift that prompts a user’s location and displays the current weather info about the location. Integrate whichever weather source you feel comfortable integrating and explain why you selected that source.
+
+​Commit the code to GitHub​ ​and share it with our team to review.
+********************************************************************************
+
+Complete Date: April.26th 2016
+
+Name: Xuetao Hong
+
+Company: Awesome Inc
+
+Features:
+1. Use CLLocationManager to access GPS to get location infomation.
+2. Use location information and OpenWeatherMap API to get current weather infomation.
+3. Display weather infomation on the screen.
+4. Display location on the map
+
+Usage:
+1. Make sure the simulator setting is set to a default location before start the app. eg. I set it to New York. (Error will occur when the simulator fails to provide correct GPS infomation)
+2. Start the app, after the launchScreen, it will ask for authorization on accessing the GPS information. Just press Allow button to continue.
+3. User can either choose "current" button which stands for "using current location" or enter any valid US city name in the textField.
+4. Tap background will hide the keyboard.
