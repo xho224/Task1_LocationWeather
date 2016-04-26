@@ -15,7 +15,7 @@ class ViewController: UIViewController ,CLLocationManagerDelegate, WeatherServic
 
     let weatherService = WeatherService()
     let locationManager = CLLocationManager()
-    var loca: CLPlacemark!
+    var loca: CLPlacemark?
     
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var Description: UILabel!
@@ -51,9 +51,11 @@ class ViewController: UIViewController ,CLLocationManagerDelegate, WeatherServic
             }
             
             if placemark!.count > 0 {
-                let pm = placemark![0] as! CLPlacemark
-                self.displayLocationInfo(pm)
-                self.loca = pm
+                let pm: CLPlacemark?
+                pm = placemark![0]
+                //let pm? = placemark![0] as! CLPlacemark
+                self.displayLocationInfo(pm!)
+                self.loca = pm!
             }
         })
     }
@@ -110,7 +112,9 @@ class ViewController: UIViewController ,CLLocationManagerDelegate, WeatherServic
     }
     
     @IBAction func useCurLoc(sender: UIButton) {
-        self.weatherService.getWeather((loca.location?.coordinate.latitude)!, lon: (loca.location?.coordinate.longitude)!)
+        if loca != nil{
+            self.weatherService.getWeather((loca!.location?.coordinate.latitude)!, lon: (loca!.location?.coordinate.longitude)!)
+        }
         //hide keyboard by click button
         self.CityName.resignFirstResponder()
         
